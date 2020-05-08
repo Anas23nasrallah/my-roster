@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Roster</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <input id='input'>
+    <button id='btnSearch'>Search</button>
+    <button id='dreamTeamBtn'>Dream Team</button>
+    <div id='players'></div>
+    <div id='dreamTeam'></div>
+
+    <script id="players-temp" type="text/x-handlebars-template">
+        {{#if isDreamTeam}}
+        <p> Your Dream Team</p>
+        {{/if}}
+        {{#each players}}
+            <div class = 'player' data-name = {{this.name}} data-jersey={{this.jersey}} data-position={{this.position}}>
+                <p class='text'> Name: {{this.name}}</p>
+                <p class='text'> Jersey: {{this.jersey}}</p>
+                <p class='text'> Position: {{this.position}}</p>
+                <p>-------------------------------------------</p>
+            </div>
+        {{/each}}
+    </script>
+    <style> #dreamTeam { background-color:lightgreen; }</style>
+    <script src='/jquery/dist/jquery.js'></script>
+    <script src='main.js'></script>
+
+</body>
+
+</html>
